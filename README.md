@@ -1,2 +1,77 @@
-# recycle
-K-digital Training 8th, Capstone Project
+# 🧪 병 판별 분석 웹서비스 (AI-based Bottle Detection & Counting)
+
+## 📌 프로젝트 소개
+K-Digital Training 8기 과정 중, AI 스타트업 **Seoreu(서르)**와의 협업을 통해 진행된 **AI 기반 유리병 탐지 및 분류 서비스**입니다.  
+컨베이어 벨트 위를 흐르는 병을 실시간으로 분석하여 **중복 방지 카운팅**, **정확한 병 분류**, **통계 시각화** 기능을 제공하는 풀스택 웹 프로젝트입니다.
+
+---
+
+## 🛠 기술 스택
+
+| 구분        | 기술 |
+|-------------|------|
+| **Frontend** | React, CSS Module |
+| **Backend**  | Spring Boot |
+| **Database** | MySQL |
+| **AI/ML**    | Flask, YOLOv8, ByteTrack |
+| **기타**     | JWT, REST API, Postman, Git, Figma |
+
+---
+
+## 💡 주요 기능
+
+- 병 탐지/분류 모델(YOLOv8 + ByteTrack)을 이용한 영상 분석
+- 중복 카운팅 방지 알고리즘 적용 (정확도 ±3%)
+- 병 종류별 분류 및 통계 시각화
+- 관리자 기능 (데이터 관리, 결과 확인)
+- JWT 기반 로그인 및 권한 인증
+- 반응형 대시보드 UI
+
+---
+
+## 👩‍💻 담당 역할 (백엔드 개발 - 김예진)
+
+- Spring Boot 기반 REST API 전체 설계 및 구현
+- MySQL 연동 및 데이터 구조 설계 (ERD, 스키마 설계)
+- JWT 인증 시스템 구축
+- 프론트엔드 협업을 고려한 API 응답 구조 및 성능 최적화
+
+---
+
+## ▶ 실행 흐름 및 시스템 구성
+
+1. **사용자 인터페이스 (React)**
+   - 웹 브라우저를 통해 사용자 로그인 후 병 탐지 요청
+   - 프론트엔드에서 Flask AI 서버 및 Spring Boot API와 연동
+
+2. **AI 분석 서버 (Flask + YOLOv8 + ByteTrack)**
+   - 사용자가 업로드한 영상에서 병 탐지 및 추적 수행
+   - 중복 방지를 위한 객체 추적 후 카운팅 결과 반환
+
+3. **백엔드 서버 (Spring Boot)**
+   - Flask에서 분석된 결과 수신
+   - 병 종류, 수량, 시간대 등 정보를 MySQL에 저장
+   - 관리자 요청 시 통계/분석 결과 제공
+
+4. **DB 및 통계 시각화**
+   - 저장된 병 정보는 관리자 페이지에서 시각화
+   - 병 종류별/시간대별 통계 차트 및 분석 결과 대시보드 제공
+
+---
+
+### 💻 실행 구조 요약도
+
+```plaintext
+[사용자] → [React 프론트엔드]
+              ↓ 요청
+        [Spring Boot API 서버] ←→ [Flask AI 분석 서버 (YOLOv8)]
+              ↓ 저장
+           [MySQL DB]
+              ↓ 조회
+       [React 관리자 대시보드]
+
+---
+
+## 📷 결과 예시
+![image](https://github.com/user-attachments/assets/1ed3774f-87b9-40c0-b9c8-55a497e0c4db)
+
