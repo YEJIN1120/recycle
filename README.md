@@ -69,7 +69,7 @@ K-Digital Training 8기 과정 중, AI 스타트업 **Seoreu(서르)**와의 협
            [MySQL DB]
               ↓ 조회
        [React 관리자 대시보드]
-
+```
 ---
 
 ## 📷 결과 예시
